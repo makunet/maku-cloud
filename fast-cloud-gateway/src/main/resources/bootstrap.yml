@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: fast-cloud-gateway
+  profiles:
+    active: dev
+  cloud:
+    gateway:
+      metrics:
+        enabled: true
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: fast-cloud-system
+          uri: lb://fast-cloud-system
+          order: 1
+          predicates:
+            - Path=/sys/**
+          filters:
+            - StripPrefix=0
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        # 命名空间，默认：public
+        namespace:
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE

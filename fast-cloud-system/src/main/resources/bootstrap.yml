@@ -1,0 +1,78 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /sys
+
+spring:
+  application:
+    name: fast-cloud-system
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        # 命名空间，默认：public
+        namespace:
+  redis:
+    database: 2
+    host: localhost
+    port: 6379
+    #password:
+    #timeout: 6000ms  # 连接超时时长（毫秒）
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/fast_cloud?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true
+      username: fast
+      password: 123456
+      initial-size: 5
+      min-idle: 10
+      max-active: 20
+      max-wait: 6000
+      min-evictable-idle-time-millis: 600000
+      max-evictable-idle-time-millis: 900000
+      validation-query: SELECT 1
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 500
+          merge-sql: false
+        wall:
+          config:
+            multi-statement-allow: true
+
+
+
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  # 实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: net.maku.*.entity
+  global-config:
+    # 数据库相关配置
+    db-config:
+      # ID自增
+      id-type: AUTO
+      # 逻辑已删除值
+      logic-delete-value: 1
+      # 逻辑未删除值
+      logic-not-delete-value: 0
+    banner: false
+  # 原生配置
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+  configuration-properties:
+    prefix:
+    blobType: BLOB
+    boolValue: TRUE

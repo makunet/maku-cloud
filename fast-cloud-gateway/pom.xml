@@ -38,6 +38,10 @@
 			<groupId>com.alibaba.cloud</groupId>
 			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-webflux-ui</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>

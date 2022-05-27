@@ -20,7 +20,7 @@ public class SwaggerConfig{
     public GroupedOpenApi userApi(){
         String[] paths = { "/**" };
         String[] packagedToMatch = { "net.maku" };
-        return GroupedOpenApi.builder().group("FastBoot")
+        return GroupedOpenApi.builder().group("FastCloud")
                 .pathsToMatch(paths)
                 .packagesToScan(packagedToMatch).build();
     }
@@ -31,8 +31,8 @@ public class SwaggerConfig{
         contact.setName("阿沐 babamu@126.com");
 
         return new OpenAPI().info(new Info()
-            .title("FastBoot")
-            .description( "FastBoot")
+            .title("FastCloud")
+            .description( "FastCloud")
             .contact(contact)
             .version("1.0")
             .termsOfService("https://maku.net")

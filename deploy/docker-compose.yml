@@ -5,10 +5,14 @@ services:
     container_name: fast-cloud-gateway
     ports:
       - 8080:8080
+    env_file:
+      - app.env
     volumes:
       - /work/www/fast-cloud/fast-cloud-gateway.jar:/app/app.jar
   fast-cloud-system:
     image: makunet:1.0
     container_name: fast-cloud-system
+    env_file:
+      - app.env
     volumes:
       - /work/www/fast-cloud/fast-cloud-system.jar:/app/app.jar

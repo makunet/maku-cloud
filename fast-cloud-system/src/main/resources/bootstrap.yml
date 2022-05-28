@@ -9,9 +9,10 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
+        server-addr: ${nacos-host:127.0.0.1}:${nacos-port:8848}
         # 命名空间，默认：public
-        namespace:
+        namespace: ${nacos-namespace:}
+        service: ${spring.application.name}
   redis:
     database: 2
     host: localhost

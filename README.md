@@ -1,6 +1,6 @@
 ## 项目说明
 - FastCloud是采用Spring Cloud Alibaba、SpringSecurity Oauth2.0、Spring Cloud Gateway、SpringBoot、Nacos、Redis、Mybatis-Plus等框架，开发的一套SpringCloud快速开发系统，使用门槛极低，且采用MIT开源协议，完全免费开源，可免费用于**商业项目**等场景。
-- 前端：[https://gitee.com/makunet/fast-admin](https://gitee.com/makunet/fast-admin)
+- 前端工程：[https://gitee.com/makunet/fast-admin](https://gitee.com/makunet/fast-admin)
 - 代码生成器：[https://gitee.com/makunet/fast-generator](https://gitee.com/makunet/fast-generator)
 - 开发文档：[https://maku.net/docs/fast-cloud](https://maku.net/docs/fast-cloud)
 

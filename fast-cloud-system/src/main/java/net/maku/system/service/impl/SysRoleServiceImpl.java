@@ -9,11 +9,12 @@ import net.maku.framework.common.service.impl.BaseServiceImpl;
 import net.maku.system.convert.SysRoleConvert;
 import net.maku.system.dao.SysRoleDao;
 import net.maku.system.entity.SysRoleEntity;
+import net.maku.system.enums.DataScopeEnum;
+import net.maku.system.query.SysRoleQuery;
 import net.maku.system.service.SysRoleDataScopeService;
 import net.maku.system.service.SysRoleMenuService;
 import net.maku.system.service.SysRoleService;
 import net.maku.system.service.SysUserRoleService;
-import net.maku.system.query.SysRoleQuery;
 import net.maku.system.vo.SysRoleVO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -62,6 +63,7 @@ public class SysRoleServiceImpl extends BaseServiceImpl<SysRoleDao, SysRoleEntit
 		SysRoleEntity entity = SysRoleConvert.INSTANCE.convert(vo);
 
 		// 保存角色
+		entity.setDataScope(DataScopeEnum.CUSTOM.getValue());
 		baseMapper.insert(entity);
 
 		// 保存角色菜单关系

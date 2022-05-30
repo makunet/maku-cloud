@@ -10,10 +10,10 @@ import net.maku.system.convert.SysUserConvert;
 import net.maku.system.dao.SysUserDao;
 import net.maku.system.entity.SysUserEntity;
 import net.maku.system.enums.SuperAdminEnum;
+import net.maku.system.query.SysUserQuery;
 import net.maku.system.service.SysUserPostService;
 import net.maku.system.service.SysUserRoleService;
 import net.maku.system.service.SysUserService;
-import net.maku.system.query.SysUserQuery;
 import net.maku.system.vo.SysUserVO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,7 +55,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUserDao, SysUserEntit
         params.put("gender", query.getGender());
 
         // 数据权限
-        params.put(Constant.DATA_SCOPE, getDataScope("t1"));
+        params.put(Constant.DATA_SCOPE, getDataScope("t1", null));
 
         return params;
     }

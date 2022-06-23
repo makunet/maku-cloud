@@ -7,10 +7,8 @@ import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
-import io.swagger.v3.oas.models.servers.Server;
 
 import org.springdoc.core.GroupedOpenApi;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -21,8 +19,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class SwaggerConfig{
-    @Value("${gateway.route:}")
-    private String route;
 
     @Bean
     public GroupedOpenApi userApi(){
@@ -46,16 +42,14 @@ public class SwaggerConfig{
             .termsOfService("https://maku.net")
             .license(new License().name("MIT")
             .url("https://maku.net")));
-        if(route!=null && route.length()>0) {
-            openapi.addServersItem(new Server().url("/"+route));
-        }
+
         openapi.addSecurityItem(new SecurityRequirement().addList("api_key"))
-            .components(new Components()
-                    .addSecuritySchemes("api_key",
-                            new SecurityScheme()
-                                    .name("Authorization")
-                                    .type(SecurityScheme.Type.APIKEY)
-                                    .in(SecurityScheme.In.HEADER)));
+            .components(new Components().addSecuritySchemes("api_key",
+                new SecurityScheme()
+                    .name("Authorization")
+                    .type(SecurityScheme.Type.APIKEY)
+                    .in(SecurityScheme.In.HEADER)));
+
         return openapi;
     }
 

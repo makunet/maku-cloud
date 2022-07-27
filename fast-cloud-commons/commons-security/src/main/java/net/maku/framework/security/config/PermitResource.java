@@ -18,6 +18,7 @@ public class PermitResource {
         "/swagger-ui.html",
         "/swagger-ui/**",
         "/doc.html",
-        "/oauth/captcha"
+        "/oauth/captcha",
+        "/upload/**"
     };
 }

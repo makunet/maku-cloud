@@ -37,6 +37,7 @@
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <nacos.version>2.1.0</nacos.version>
         <hutool.version>5.7.22</hutool.version>
+        <aliyun.oss.version>3.8.0</aliyun.oss.version>
     </properties>
 
     <dependencies>
@@ -138,6 +139,11 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun.oss.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

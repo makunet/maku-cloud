@@ -23,3 +23,15 @@ spring:
             refresh: true
 
 
+storage:
+  enabled: true
+  config:
+    # 存储类型：local、aliyun
+    type: local
+    # 访问域名
+    domain: http://localhost:8080/sys
+    # 配置访问前缀
+    prefix:
+  local:
+    # 本地上传路径
+    path: D://upload

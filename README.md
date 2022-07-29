@@ -27,5 +27,15 @@
 ![](https://maku.net/app/img/qrcode.jpg)
 
 
+## 效果图
+![输入图片说明](images/1.png)
+
+![输入图片说明](images/2.png)
+
+![输入图片说明](images/3.png)
+
+![输入图片说明](images/4.png)
+
+
 ## 支持
 如果觉得框架还不错，或者已经在使用了，希望你可以去 [Github](https://github.com/makunet/fast-cloud) 或 [Gitee](https://gitee.com/makunet/fast-cloud) 帮作者点个 ⭐ Star，这将是对作者极大的鼓励与支持。

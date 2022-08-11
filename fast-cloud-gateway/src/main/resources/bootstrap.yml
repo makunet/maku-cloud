@@ -28,6 +28,13 @@ spring:
             - Path=/schedule/**
           filters:
             - StripPrefix=1
+        - id: fast-cloud-new
+          uri: lb://fast-cloud-new
+          order: 999
+          predicates:
+            - Path=/new/**
+          filters:
+            - StripPrefix=1
         - id: openapi
           uri: http://localhost:${server.port}
           predicates:

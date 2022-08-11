@@ -21,6 +21,13 @@ spring:
             - Path=/sys/**
           filters:
             - StripPrefix=1
+        - id: fast-cloud-quartz
+          uri: lb://fast-cloud-quartz
+          order: 2
+          predicates:
+            - Path=/schedule/**
+          filters:
+            - StripPrefix=1
         - id: openapi
           uri: http://localhost:${server.port}
           predicates:

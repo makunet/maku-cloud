@@ -2,7 +2,7 @@ package net.maku.storage.service;
 
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
-import net.maku.framework.common.exception.FastException;
+import net.maku.framework.mybatis.exception.FastException;
 import net.maku.storage.properties.StorageProperties;
 
 import java.io.ByteArrayInputStream;

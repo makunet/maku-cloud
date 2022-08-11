@@ -1,8 +1,8 @@
 package net.maku.system.service;
 
-import net.maku.framework.common.page.PageResult;
-import net.maku.framework.common.query.Query;
-import net.maku.framework.common.service.BaseService;
+import net.maku.framework.mybatis.page.PageResult;
+import net.maku.framework.mybatis.query.Query;
+import net.maku.framework.mybatis.service.BaseService;
 import net.maku.system.entity.SysOauthClientEntity;
 import net.maku.system.vo.SysOauthClientVO;
 

@@ -2,10 +2,10 @@ package net.maku.system.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.AllArgsConstructor;
-import net.maku.framework.common.constant.Constant;
-import net.maku.framework.common.exception.FastException;
-import net.maku.framework.common.service.impl.BaseServiceImpl;
-import net.maku.framework.common.utils.TreeUtils;
+import net.maku.framework.mybatis.constant.Constant;
+import net.maku.framework.mybatis.exception.FastException;
+import net.maku.framework.mybatis.service.impl.BaseServiceImpl;
+import net.maku.framework.mybatis.utils.TreeUtils;
 import net.maku.system.convert.SysOrgConvert;
 import net.maku.system.dao.SysOrgDao;
 import net.maku.system.dao.SysUserDao;

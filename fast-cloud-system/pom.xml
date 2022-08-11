@@ -11,7 +11,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>net.maku</groupId>
-			<artifactId>commons-security</artifactId>
+			<artifactId>fast-cloud-mybatis</artifactId>
 			<version>${revision}</version>
 		</dependency>
 		<dependency>

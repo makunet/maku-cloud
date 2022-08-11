@@ -4,7 +4,7 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.StrUtil;
 import lombok.AllArgsConstructor;
-import net.maku.framework.common.utils.JsonUtils;
+import net.maku.framework.mybatis.utils.JsonUtils;
 import net.maku.system.dao.SysOauthClientDao;
 import net.maku.system.entity.SysOauthClientEntity;
 import org.springframework.security.core.authority.AuthorityUtils;

@@ -18,6 +18,7 @@
 
     <modules>
 	    <module>fast-cloud-framework</module>
+		<module>fast-cloud-api</module>
 		<module>fast-cloud-module</module>
 		<module>fast-cloud-system</module>
         <module>fast-cloud-gateway</module>

@@ -16,3 +16,10 @@ services:
       - app.env
     volumes:
       - /work/www/fast-cloud/fast-cloud-system.jar:/app/app.jar
+#  fast-cloud-quartz:
+#    image: makunet:1.0
+#    container_name: fast-cloud-quartz
+#    env_file:
+#      - app.env
+#    volumes:
+#      - /work/www/fast-cloud/fast-cloud-quartz.jar:/app/app.jar

@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import net.maku.framework.mybatis.utils.DateUtils;
-import net.maku.framework.mybatis.utils.TreeNode;
+import net.maku.framework.common.utils.DateUtils;
+import net.maku.framework.common.utils.TreeNode;
 import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.Min;

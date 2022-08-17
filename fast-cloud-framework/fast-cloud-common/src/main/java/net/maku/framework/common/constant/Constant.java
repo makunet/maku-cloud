@@ -1,4 +1,4 @@
-package net.maku.framework.mybatis.constant;
+package net.maku.framework.common.constant;
 
 /**
  * 常量

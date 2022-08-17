@@ -1,6 +1,6 @@
 package net.maku.quartz.service;
 
-import net.maku.framework.mybatis.page.PageResult;
+import net.maku.framework.common.page.PageResult;
 import net.maku.framework.mybatis.service.BaseService;
 import net.maku.quartz.entity.ScheduleJobLogEntity;
 import net.maku.quartz.query.ScheduleJobLogQuery;

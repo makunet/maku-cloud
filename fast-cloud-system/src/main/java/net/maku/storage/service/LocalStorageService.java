@@ -1,6 +1,6 @@
 package net.maku.storage.service;
 
-import net.maku.framework.mybatis.exception.FastException;
+import net.maku.framework.common.exception.FastException;
 import net.maku.storage.properties.StorageProperties;
 import org.springframework.util.FileCopyUtils;
 

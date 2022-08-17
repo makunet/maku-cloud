@@ -4,8 +4,8 @@ import cn.hutool.core.util.StrUtil;
 import com.wf.captcha.SpecCaptcha;
 import com.wf.captcha.base.Captcha;
 import lombok.AllArgsConstructor;
-import net.maku.framework.mybatis.utils.RedisKeys;
-import net.maku.framework.mybatis.utils.RedisUtils;
+import net.maku.framework.common.utils.RedisKeys;
+import net.maku.framework.common.utils.RedisUtils;
 import org.springframework.stereotype.Service;
 
 /**

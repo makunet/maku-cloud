@@ -1,4 +1,4 @@
-package net.maku.framework.mybatis.page;
+package net.maku.framework.common.page;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

@@ -1,8 +1,8 @@
-package net.maku.framework.mybatis.utils;
+package net.maku.framework.common.utils;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import net.maku.framework.mybatis.exception.ErrorCode;
+import net.maku.framework.common.exception.ErrorCode;
 
 /**
  * 响应数据

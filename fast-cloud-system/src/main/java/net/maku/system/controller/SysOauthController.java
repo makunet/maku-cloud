@@ -3,7 +3,7 @@ package net.maku.system.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import net.maku.framework.mybatis.utils.Result;
+import net.maku.framework.common.utils.Result;
 import net.maku.security.service.CaptchaService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;

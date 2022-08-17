@@ -1,4 +1,4 @@
-package net.maku.framework.mybatis.exception;
+package net.maku.framework.common.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

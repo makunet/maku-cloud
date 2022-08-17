@@ -2,7 +2,7 @@ package net.maku.module.controller;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import net.maku.framework.mybatis.utils.Result;
+import net.maku.framework.common.utils.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

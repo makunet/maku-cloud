@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import lombok.AllArgsConstructor;
-import net.maku.framework.mybatis.page.PageResult;
+import net.maku.framework.common.page.PageResult;
 import net.maku.framework.mybatis.service.impl.BaseServiceImpl;
 import net.maku.system.convert.SysPostConvert;
 import net.maku.system.dao.SysPostDao;

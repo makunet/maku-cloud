@@ -1,4 +1,4 @@
-package net.maku.framework.mybatis.utils;
+package net.maku.framework.common.utils;
 
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;

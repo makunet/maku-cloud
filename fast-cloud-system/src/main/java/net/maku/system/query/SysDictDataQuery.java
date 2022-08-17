@@ -3,7 +3,7 @@ package net.maku.system.query;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import net.maku.framework.mybatis.query.Query;
+import net.maku.framework.common.query.Query;
 
 import javax.validation.constraints.NotNull;
 

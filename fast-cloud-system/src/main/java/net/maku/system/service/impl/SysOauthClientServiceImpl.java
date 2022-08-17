@@ -2,8 +2,8 @@ package net.maku.system.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import net.maku.framework.mybatis.page.PageResult;
-import net.maku.framework.mybatis.query.Query;
+import net.maku.framework.common.page.PageResult;
+import net.maku.framework.common.query.Query;
 import net.maku.framework.mybatis.service.impl.BaseServiceImpl;
 import net.maku.system.convert.SysOauthClientConvert;
 import net.maku.system.dao.SysOauthClientDao;

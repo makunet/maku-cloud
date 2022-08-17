@@ -1,4 +1,4 @@
-package net.maku.framework.mybatis.utils;
+package net.maku.framework.common.utils;
 
 
 import java.text.ParseException;

@@ -1,7 +1,7 @@
-package net.maku.framework.mybatis.exception;
+package net.maku.framework.common.exception;
 
 import lombok.extern.slf4j.Slf4j;
-import net.maku.framework.mybatis.utils.Result;
+import net.maku.framework.common.utils.Result;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;

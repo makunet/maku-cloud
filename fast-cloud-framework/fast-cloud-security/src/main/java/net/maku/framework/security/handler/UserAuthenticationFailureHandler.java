@@ -1,9 +1,9 @@
 package net.maku.framework.security.handler;
 
 import lombok.SneakyThrows;
-import net.maku.framework.mybatis.utils.HttpContextUtils;
-import net.maku.framework.mybatis.utils.JsonUtils;
-import net.maku.framework.mybatis.utils.Result;
+import net.maku.framework.common.utils.HttpContextUtils;
+import net.maku.framework.common.utils.JsonUtils;
+import net.maku.framework.common.utils.Result;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;

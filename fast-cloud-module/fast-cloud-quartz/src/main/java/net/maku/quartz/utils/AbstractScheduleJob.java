@@ -2,7 +2,7 @@ package net.maku.quartz.utils;
 
 import cn.hutool.extra.spring.SpringUtil;
 import lombok.extern.slf4j.Slf4j;
-import net.maku.framework.mybatis.utils.ExceptionUtils;
+import net.maku.framework.common.utils.ExceptionUtils;
 import net.maku.quartz.entity.ScheduleJobEntity;
 import net.maku.quartz.entity.ScheduleJobLogEntity;
 import net.maku.quartz.enums.ScheduleStatusEnum;

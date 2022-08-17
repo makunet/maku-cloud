@@ -1,8 +1,8 @@
 package net.maku.security.service;
 
 import lombok.AllArgsConstructor;
-import net.maku.framework.mybatis.exception.ErrorCode;
-import net.maku.framework.mybatis.exception.FastException;
+import net.maku.framework.common.exception.ErrorCode;
+import net.maku.framework.common.exception.FastException;
 import net.maku.framework.security.user.UserDetail;
 import net.maku.system.convert.SysUserConvert;
 import net.maku.system.dao.SysRoleDao;

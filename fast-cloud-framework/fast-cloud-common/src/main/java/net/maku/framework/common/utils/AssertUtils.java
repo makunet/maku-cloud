@@ -1,8 +1,8 @@
-package net.maku.framework.mybatis.utils;
+package net.maku.framework.common.utils;
 
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.StrUtil;
-import net.maku.framework.mybatis.exception.FastException;
+import net.maku.framework.common.exception.FastException;
 
 /**
  * 校验工具类

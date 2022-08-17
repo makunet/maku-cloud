@@ -1,4 +1,4 @@
-package net.maku.framework.mybatis.utils;
+package net.maku.framework.common.utils;
 
 import cn.hutool.core.util.StrUtil;
 import org.springframework.http.HttpHeaders;

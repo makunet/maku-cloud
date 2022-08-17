@@ -1,6 +1,6 @@
 package net.maku.security.token;
 
-import net.maku.framework.mybatis.utils.Result;
+import net.maku.framework.common.utils.Result;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;

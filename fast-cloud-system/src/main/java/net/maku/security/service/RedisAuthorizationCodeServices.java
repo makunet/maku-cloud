@@ -1,8 +1,8 @@
 package net.maku.security.service;
 
 import lombok.AllArgsConstructor;
-import net.maku.framework.mybatis.utils.RedisKeys;
-import net.maku.framework.mybatis.utils.RedisUtils;
+import net.maku.framework.common.utils.RedisKeys;
+import net.maku.framework.common.utils.RedisUtils;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.code.RandomValueAuthorizationCodeServices;
 import org.springframework.stereotype.Service;

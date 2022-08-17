@@ -1,6 +1,6 @@
 package net.maku.quartz.utils;
 
-import net.maku.framework.mybatis.exception.FastException;
+import net.maku.framework.common.exception.FastException;
 import net.maku.quartz.entity.ScheduleJobEntity;
 import net.maku.quartz.enums.ScheduleConcurrentEnum;
 import net.maku.quartz.enums.ScheduleStatusEnum;

@@ -1,7 +1,7 @@
 package net.maku.framework.security.exception;
 
-import net.maku.framework.mybatis.exception.ErrorCode;
-import net.maku.framework.mybatis.utils.Result;
+import net.maku.framework.common.exception.ErrorCode;
+import net.maku.framework.common.utils.Result;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

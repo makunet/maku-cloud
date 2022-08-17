@@ -1,6 +1,6 @@
 package net.maku.system.service;
 
-import net.maku.framework.mybatis.page.PageResult;
+import net.maku.framework.common.page.PageResult;
 import net.maku.framework.mybatis.service.BaseService;
 import net.maku.system.entity.SysPostEntity;
 import net.maku.system.query.SysPostQuery;

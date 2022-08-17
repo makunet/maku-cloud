@@ -11,6 +11,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>net.maku</groupId>
+			<artifactId>fast-cloud-api</artifactId>
+			<version>${revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.maku</groupId>
 			<artifactId>fast-cloud-mybatis</artifactId>
 			<version>${revision}</version>
 		</dependency>

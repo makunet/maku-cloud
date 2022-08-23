@@ -40,7 +40,7 @@
         <security.oauth2.version>2.3.8.RELEASE</security.oauth2.version>
         <captcha.version>1.6.2</captcha.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
-        <nacos.version>2.1.0</nacos.version>
+        <nacos.version>2.1.1</nacos.version>
         <hutool.version>5.7.22</hutool.version>
         <aliyun.oss.version>3.8.0</aliyun.oss.version>
         <dameng.version>8.1.2.79</dameng.version>

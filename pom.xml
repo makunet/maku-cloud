@@ -44,6 +44,9 @@
         <hutool.version>5.7.22</hutool.version>
         <aliyun.oss.version>3.8.0</aliyun.oss.version>
         <dameng.version>8.1.2.79</dameng.version>
+        <aliyun.dysmsapi.version>2.0.18</aliyun.dysmsapi.version>
+        <tencentcloud.sdk.version>3.1.574</tencentcloud.sdk.version>
+        <oshi.version>6.2.2</oshi.version>
     </properties>
 
     <dependencies>
@@ -155,6 +158,21 @@
                 <groupId>com.dameng</groupId>
                 <artifactId>DmJdbcDriver18</artifactId>
                 <version>${dameng.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>dysmsapi20170525</artifactId>
+                <version>${aliyun.dysmsapi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tencentcloudapi</groupId>
+                <artifactId>tencentcloud-sdk-java</artifactId>
+                <version>${tencentcloud.sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.oshi</groupId>
+                <artifactId>oshi-core</artifactId>
+                <version>${oshi.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

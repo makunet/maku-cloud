@@ -10,6 +10,7 @@
 
 	<modules>
 	    <module>fast-cloud-quartz</module>
+		<module>fast-cloud-message</module>
     </modules>
 
 	

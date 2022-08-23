@@ -28,6 +28,13 @@ spring:
             - Path=/schedule/**
           filters:
             - StripPrefix=1
+        - id: fast-cloud-message
+          uri: lb://fast-cloud-message
+          order: 3
+          predicates:
+            - Path=/message/**
+          filters:
+            - StripPrefix=1
         - id: fast-cloud-new
           uri: lb://fast-cloud-new
           order: 999

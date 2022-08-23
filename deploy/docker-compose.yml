@@ -23,3 +23,10 @@ services:
 #      - app.env
 #    volumes:
 #      - /work/www/fast-cloud/fast-cloud-quartz.jar:/app/app.jar
+#  fast-cloud-message:
+#    image: makunet:1.0
+#    container_name: fast-cloud-message
+#    env_file:
+#      - app.env
+#    volumes:
+#      - /work/www/fast-cloud/fast-cloud-message.jar:/app/app.jar

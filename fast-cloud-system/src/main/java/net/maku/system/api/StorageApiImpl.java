@@ -5,7 +5,6 @@ import net.maku.api.module.system.StorageApi;
 import net.maku.api.module.system.dto.StorageDTO;
 import net.maku.framework.common.utils.Result;
 import net.maku.storage.service.StorageService;
-import org.apache.commons.io.FilenameUtils;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -28,9 +27,10 @@ public class StorageApiImpl implements StorageApi {
             return Result.error("文件不能为空");
         }
 
+        // 上传路径
+        String path = storageService.getPath(file.getOriginalFilename());
         // 上传文件
-        String extension = FilenameUtils.getExtension(file.getOriginalFilename());
-        String url = storageService.uploadSuffix(file.getBytes(), extension);
+        String url = storageService.upload(file.getBytes(), path);
 
         // 上传信息
         StorageDTO storage = new StorageDTO();

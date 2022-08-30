@@ -1,0 +1,5 @@
+auth:
+  ignore_urls:
+    - /auth/captcha
+    - /auth/login
+    - /upload/**

@@ -1,11 +1,12 @@
-package net.maku.security.service;
+package net.maku.system.service.impl;
 
 import cn.hutool.core.util.StrUtil;
 import com.wf.captcha.SpecCaptcha;
 import com.wf.captcha.base.Captcha;
 import lombok.AllArgsConstructor;
-import net.maku.framework.common.utils.RedisKeys;
-import net.maku.framework.common.utils.RedisUtils;
+import net.maku.framework.common.cache.RedisCache;
+import net.maku.framework.common.cache.RedisKeys;
+import net.maku.system.service.SysCaptchaService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,14 +16,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @AllArgsConstructor
-public class CaptchaService {
-    private final RedisUtils redisUtils;
-
-    /**
-     * 生成验证码
-     * @param key    key
-     * @return      返回base64图片验证码
-     */
+public class SysCaptchaServiceImpl implements SysCaptchaService {
+    private final RedisCache redisCache;
+    
+    @Override
     public String generate(String key) {
         // 生成验证码
         SpecCaptcha captcha = new SpecCaptcha(150, 40);
@@ -31,19 +28,14 @@ public class CaptchaService {
 
         // 保存到缓存
         key = RedisKeys.getCaptchaKey(key);
-        redisUtils.set(key, captcha.text(), 300);
+        redisCache.set(key, captcha.text(), 300);
 
         return captcha.toBase64();
     }
 
-    /**
-     * 验证码效验
-     * @param key  key
-     * @param code  验证码
-     * @return  true：成功  false：失败
-     */
+    @Override
     public boolean validate(String key, String code) {
-        if(StrUtil.isBlank(key) || StrUtil.isBlank(code)){
+        if (StrUtil.isBlank(key) || StrUtil.isBlank(code)) {
             return false;
         }
 
@@ -51,20 +43,19 @@ public class CaptchaService {
         String captcha = getCache(key);
 
         // 效验成功
-        if(code.equalsIgnoreCase(captcha)){
+        if (code.equalsIgnoreCase(captcha)) {
             return true;
         }
 
         return false;
     }
 
-
-    private String getCache(String key){
+    private String getCache(String key) {
         key = RedisKeys.getCaptchaKey(key);
-        String captcha = (String)redisUtils.get(key);
+        String captcha = (String) redisCache.get(key);
         // 删除验证码
-        if(captcha != null){
-            redisUtils.delete(key);
+        if (captcha != null) {
+            redisCache.delete(key);
         }
 
         return captcha;

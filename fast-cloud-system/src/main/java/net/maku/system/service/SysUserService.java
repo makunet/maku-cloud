@@ -1,7 +1,7 @@
 package net.maku.system.service;
 
 import net.maku.framework.common.page.PageResult;
-import net.maku.framework.mybatis.service.BaseService;
+import net.maku.framework.common.service.BaseService;
 import net.maku.system.entity.SysUserEntity;
 import net.maku.system.query.SysRoleUserQuery;
 import net.maku.system.query.SysUserQuery;
@@ -24,10 +24,13 @@ public interface SysUserService extends BaseService<SysUserEntity> {
 
     void delete(List<Long> idList);
 
+    SysUserVO getByMobile(String mobile);
+
     /**
      * 修改密码
-     * @param id           用户ID
-     * @param newPassword  新密码
+     *
+     * @param id          用户ID
+     * @param newPassword 新密码
      */
     void updatePassword(Long id, String newPassword);
 

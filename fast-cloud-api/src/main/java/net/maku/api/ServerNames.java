@@ -10,4 +10,8 @@ public interface ServerNames {
      * fast-cloud-system 服务名
      */
     String SYSTEM_SERVER_NAME = "fast-cloud-system";
+    /**
+     * fast-cloud-message 服务名
+     */
+    String MESSAGE_SERVER_NAME = "fast-cloud-message";
 }

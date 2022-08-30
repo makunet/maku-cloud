@@ -1,12 +1,12 @@
 package net.maku.system.service.impl;
 
 import cn.hutool.core.util.StrUtil;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.AllArgsConstructor;
 import net.maku.framework.common.constant.Constant;
 import net.maku.framework.common.exception.FastException;
-import net.maku.framework.mybatis.service.impl.BaseServiceImpl;
 import net.maku.framework.common.utils.TreeUtils;
+import net.maku.framework.mybatis.service.impl.BaseServiceImpl;
 import net.maku.framework.security.user.UserDetail;
 import net.maku.system.convert.SysMenuConvert;
 import net.maku.system.dao.SysMenuDao;
@@ -89,7 +89,7 @@ public class SysMenuServiceImpl extends BaseServiceImpl<SysMenuDao, SysMenuEntit
 
 	@Override
 	public Long getSubMenuCount(Long pid) {
-		return count(new QueryWrapper<SysMenuEntity>().eq("pid", pid));
+		return count(new LambdaQueryWrapper<SysMenuEntity>().eq(SysMenuEntity::getPid, pid));
 	}
 
 	@Override

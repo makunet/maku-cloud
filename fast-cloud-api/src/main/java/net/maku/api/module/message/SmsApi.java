@@ -4,6 +4,7 @@ import net.maku.api.ServerNames;
 import net.maku.framework.common.utils.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 
@@ -23,7 +24,7 @@ public interface SmsApi {
      * @return 是否发送成功
      */
     @PostMapping(value = "api/message/sms/send")
-    Result<Boolean> send(String mobile, Map<String, String> params);
+    Result<Boolean> send(@RequestParam("mobile") String mobile, @RequestParam("params") Map<String, String> params);
 
     /**
      * 发送短信
@@ -34,7 +35,7 @@ public interface SmsApi {
      * @return 是否发送成功
      */
     @PostMapping(value = "api/message/sms/sendCode")
-    Result<Boolean> sendCode(String mobile, String key, String value);
+    Result<Boolean> sendCode(@RequestParam("mobile") String mobile, @RequestParam("key") String key, @RequestParam("value") String value);
 
     /**
      * 效验短信验证码
@@ -44,5 +45,5 @@ public interface SmsApi {
      * @return 是否效验成功
      */
     @PostMapping(value = "api/message/sms/verifyCode")
-    Result<Boolean> verifyCode(String mobile, String code);
+    Result<Boolean> verifyCode(@RequestParam("mobile") String mobile, @RequestParam("code") String code);
 }

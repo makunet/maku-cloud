@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import net.maku.framework.common.constant.Constant;
 import net.maku.framework.common.exception.FastException;
 import net.maku.framework.common.page.PageResult;
-import net.maku.framework.common.service.impl.BaseServiceImpl;
+import net.maku.framework.mybatis.service.impl.BaseServiceImpl;
 import net.maku.system.convert.SysUserConvert;
 import net.maku.system.dao.SysUserDao;
 import net.maku.system.entity.SysUserEntity;

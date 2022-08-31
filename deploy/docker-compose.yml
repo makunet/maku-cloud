@@ -1,32 +1,32 @@
 version: '3.9'
 services:
-  fast-cloud-gateway:
+  maku-cloud-gateway:
     image: makunet:1.0
-    container_name: fast-cloud-gateway
+    container_name: maku-cloud-gateway
     ports:
       - 8080:8080
     env_file:
       - app.env
     volumes:
-      - /work/www/fast-cloud/fast-cloud-gateway.jar:/app/app.jar
-  fast-cloud-system:
+      - /work/www/maku-cloud/maku-cloud-gateway.jar:/app/app.jar
+  maku-cloud-system:
     image: makunet:1.0
-    container_name: fast-cloud-system
+    container_name: maku-cloud-system
     env_file:
       - app.env
     volumes:
-      - /work/www/fast-cloud/fast-cloud-system.jar:/app/app.jar
-#  fast-cloud-quartz:
+      - /work/www/maku-cloud/maku-cloud-system.jar:/app/app.jar
+#  maku-cloud-quartz:
 #    image: makunet:1.0
-#    container_name: fast-cloud-quartz
+#    container_name: maku-cloud-quartz
 #    env_file:
 #      - app.env
 #    volumes:
-#      - /work/www/fast-cloud/fast-cloud-quartz.jar:/app/app.jar
-#  fast-cloud-message:
+#      - /work/www/maku-cloud/maku-cloud-quartz.jar:/app/app.jar
+#  maku-cloud-message:
 #    image: makunet:1.0
-#    container_name: fast-cloud-message
+#    container_name: maku-cloud-message
 #    env_file:
 #      - app.env
 #    volumes:
-#      - /work/www/fast-cloud/fast-cloud-message.jar:/app/app.jar
+#      - /work/www/maku-cloud/maku-cloud-message.jar:/app/app.jar

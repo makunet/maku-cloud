@@ -1,0 +1,68 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: maku-cloud-gateway
+  profiles:
+    active: dev
+  cloud:
+    gateway:
+      metrics:
+        enabled: true
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: maku-cloud-system
+          uri: lb://maku-cloud-system
+          order: 1
+          predicates:
+            - Path=/sys/**
+          filters:
+            - StripPrefix=1
+        - id: maku-cloud-quartz
+          uri: lb://maku-cloud-quartz
+          order: 2
+          predicates:
+            - Path=/schedule/**
+          filters:
+            - StripPrefix=1
+        - id: maku-cloud-message
+          uri: lb://maku-cloud-message
+          order: 3
+          predicates:
+            - Path=/message/**
+          filters:
+            - StripPrefix=1
+        - id: maku-cloud-new
+          uri: lb://maku-cloud-new
+          order: 999
+          predicates:
+            - Path=/new/**
+          filters:
+            - StripPrefix=1
+        - id: openapi
+          uri: http://localhost:${server.port}
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+    nacos:
+      discovery:
+        server-addr: ${nacos_host:127.0.0.1}:${nacos_port:8848}
+        # 命名空间，默认：public
+        namespace: ${nacos_namespace:}
+        service: ${spring.application.name}
+
+springdoc:
+  swagger-ui:
+    path: doc.html
+
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE

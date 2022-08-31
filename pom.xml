@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.maku</groupId>
-    <artifactId>fast-cloud</artifactId>
+    <artifactId>maku-cloud</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
 
-    <name>fast-cloud</name>
-    <description>FastCloud</description>
+    <name>maku-cloud</name>
+    <description>MakuCloud</description>
     <url>https://maku.net</url>
 
     <parent>
@@ -17,12 +17,12 @@
     </parent>
 
     <modules>
-	    <module>fast-cloud-framework</module>
-		<module>fast-cloud-api</module>
-		<module>fast-cloud-module</module>
-		<module>fast-cloud-new</module>
-		<module>fast-cloud-system</module>
-        <module>fast-cloud-gateway</module>
+	    <module>maku-cloud-framework</module>
+		<module>maku-cloud-api</module>
+		<module>maku-cloud-module</module>
+		<module>maku-cloud-new</module>
+		<module>maku-cloud-system</module>
+        <module>maku-cloud-gateway</module>
     </modules>
 
     <properties>

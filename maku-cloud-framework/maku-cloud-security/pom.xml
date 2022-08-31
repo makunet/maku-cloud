@@ -21,20 +21,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-			<exclusions>
-				<exclusion>
-					<artifactId>kotlin-stdlib-jdk7</artifactId>
-					<groupId>org.jetbrains.kotlin</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>kotlin-stdlib-jdk8</artifactId>
-					<groupId>org.jetbrains.kotlin</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security.oauth</groupId>
-			<artifactId>spring-security-oauth2</artifactId>
 		</dependency>
     </dependencies>
 </project>

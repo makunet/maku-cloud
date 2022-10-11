@@ -5,7 +5,7 @@
 		<version>${revision}</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>maku-cloud-quartz</artifactId>
+	<artifactId>maku-module-quartz</artifactId>
 	<packaging>jar</packaging>
 
 	<dependencies>

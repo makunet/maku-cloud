@@ -16,17 +16,17 @@ services:
       - app.env
     volumes:
       - /work/www/maku-cloud/maku-cloud-system.jar:/app/app.jar
-#  maku-cloud-quartz:
-#    image: makunet:1.0
-#    container_name: maku-cloud-quartz
-#    env_file:
-#      - app.env
-#    volumes:
-#      - /work/www/maku-cloud/maku-cloud-quartz.jar:/app/app.jar
-#  maku-cloud-message:
-#    image: makunet:1.0
-#    container_name: maku-cloud-message
-#    env_file:
-#      - app.env
-#    volumes:
-#      - /work/www/maku-cloud/maku-cloud-message.jar:/app/app.jar
+  maku-module-quartz:
+    image: makunet:1.0
+    container_name: maku-module-quartz
+    env_file:
+      - app.env
+    volumes:
+      - /work/www/maku-cloud/maku-module-quartz.jar:/app/app.jar
+  maku-module-message:
+    image: makunet:1.0
+    container_name: maku-module-message
+    env_file:
+      - app.env
+    volumes:
+      - /work/www/maku-cloud/maku-module-message.jar:/app/app.jar

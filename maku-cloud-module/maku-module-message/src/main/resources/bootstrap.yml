@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: maku-cloud-message
+    name: maku-module-message
   profiles:
     active: dev
   cloud:

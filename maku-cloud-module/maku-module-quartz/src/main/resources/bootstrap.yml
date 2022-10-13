@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: maku-cloud-quartz
+    name: maku-module-quartz
   profiles:
     active: dev
   cloud:

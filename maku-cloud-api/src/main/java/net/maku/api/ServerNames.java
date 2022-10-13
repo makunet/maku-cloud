@@ -7,11 +7,11 @@ package net.maku.api;
  */
 public interface ServerNames {
     /**
-     * maku-cloud-system 服务名
+     * maku-module-system 服务名
      */
-    String SYSTEM_SERVER_NAME = "maku-cloud-system";
+    String SYSTEM_SERVER_NAME = "maku-module-system";
     /**
-     * maku-cloud-message 服务名
+     * maku-module-message 服务名
      */
-    String MESSAGE_SERVER_NAME = "maku-cloud-message";
+    String MESSAGE_SERVER_NAME = "maku-module-message";
 }

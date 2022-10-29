@@ -38,6 +38,17 @@ public class SysDictTypeController {
         return Result.ok(page);
     }
 
+    @GetMapping("list/sql")
+    @Operation(summary = "动态SQL数据")
+    @PreAuthorize("hasAuthority('sys:dict:page')")
+    public Result<PageResult<SysDictVO.DictData>> listSql(Long id) {
+        List<SysDictVO.DictData> list = sysDictTypeService.getDictSql(id);
+
+        PageResult<SysDictVO.DictData> page = new PageResult<>(list, list.size());
+
+        return Result.ok(page);
+    }
+
     @GetMapping("{id}")
     @Operation(summary = "信息")
     @PreAuthorize("hasAuthority('sys:dict:info')")

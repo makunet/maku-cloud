@@ -6,6 +6,8 @@ import net.maku.system.entity.SysLogLoginEntity;
 import net.maku.system.query.SysLogLoginQuery;
 import net.maku.system.vo.SysLogLoginVO;
 
+import java.util.Map;
+
 /**
  * 登录日志
  *
@@ -23,4 +25,11 @@ public interface SysLogLoginService extends BaseService<SysLogLoginEntity> {
      * @param operation 操作信息
      */
     void save(String username, Integer status, Integer operation);
+
+    /**
+     * 导出登录日志
+     *
+     * @return the map
+     */
+    Map<String, String> export();
 }

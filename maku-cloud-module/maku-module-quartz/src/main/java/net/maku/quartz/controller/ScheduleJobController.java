@@ -1,8 +1,11 @@
 package net.maku.quartz.controller;
 
+import cn.hutool.core.util.ArrayUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
+import net.maku.framework.common.exception.ServerException;
 import net.maku.framework.common.page.PageResult;
 import net.maku.framework.common.utils.Result;
 import net.maku.quartz.convert.ScheduleJobConvert;
@@ -12,6 +15,7 @@ import net.maku.quartz.service.ScheduleJobService;
 import net.maku.quartz.utils.CronUtils;
 import net.maku.quartz.vo.ScheduleJobVO;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -54,6 +58,9 @@ public class ScheduleJobController {
             return Result.error("操作失败，Cron表达式不正确");
         }
 
+        // 检查Bean的合法性
+        checkBean(vo.getBeanName());
+
         scheduleJobService.save(vo);
 
         return Result.ok();
@@ -66,6 +73,9 @@ public class ScheduleJobController {
         if (!CronUtils.isValid(vo.getCronExpression())) {
             return Result.error("操作失败，Cron表达式不正确");
         }
+
+        // 检查Bean的合法性
+        checkBean(vo.getBeanName());
 
         scheduleJobService.update(vo);
 
@@ -97,5 +107,13 @@ public class ScheduleJobController {
         scheduleJobService.changeStatus(vo);
 
         return Result.ok();
+    }
+
+    private void checkBean(String beanName) {
+        // 为避免执行jdbcTemplate等类，只允许添加有@Service注解的Bean
+        String[] serviceBeans = SpringUtil.getApplicationContext().getBeanNamesForAnnotation(Service.class);
+        if (!ArrayUtil.contains(serviceBeans, beanName)) {
+            throw new ServerException("只允许添加有@Service注解的Bean！");
+        }
     }
 }

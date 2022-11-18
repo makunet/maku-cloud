@@ -40,10 +40,8 @@ public class SysLogLoginController {
     @GetMapping("export")
     @Operation(summary = "导出excel")
     @PreAuthorize("hasAuthority('sys:log:login')")
-    public Result<Map<String, String>> export() {
-        Map<String, String> map = sysLogLoginService.export();
-
-        return Result.ok(map);
+    public void export() {
+        sysLogLoginService.export();
     }
     
 }

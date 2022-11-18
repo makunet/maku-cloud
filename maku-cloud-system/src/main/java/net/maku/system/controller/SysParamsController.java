@@ -22,7 +22,7 @@ import java.util.List;
  * @author 阿沐 babamu@126.com
  */
 @RestController
-@RequestMapping("sys/params")
+@RequestMapping("params")
 @Tag(name = "参数管理")
 @AllArgsConstructor
 public class SysParamsController {

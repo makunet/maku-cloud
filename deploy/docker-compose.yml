@@ -30,3 +30,10 @@ services:
       - app.env
     volumes:
       - /work/www/maku-cloud/maku-module-message.jar:/app/app.jar
+  maku-module-monitor:
+    image: makunet:1.0
+    container_name: maku-module-monitor
+    env_file:
+      - app.env
+    volumes:
+      - /work/www/maku-cloud/maku-module-monitor.jar:/app/app.jar

@@ -21,18 +21,25 @@ spring:
             - Path=/sys/**
           filters:
             - StripPrefix=1
-        - id: maku-cloud-quartz
-          uri: lb://maku-cloud-quartz
+        - id: maku-module-quartz
+          uri: lb://maku-module-quartz
           order: 2
           predicates:
             - Path=/schedule/**
           filters:
             - StripPrefix=1
-        - id: maku-cloud-message
-          uri: lb://maku-cloud-message
+        - id: maku-module-message
+          uri: lb://maku-module-message
           order: 3
           predicates:
             - Path=/message/**
+          filters:
+            - StripPrefix=1
+        - id: maku-module-monitor
+          uri: lb://maku-module-monitor
+          order: 4
+          predicates:
+            - Path=/monitor/**
           filters:
             - StripPrefix=1
         - id: maku-cloud-new
@@ -54,6 +61,16 @@ spring:
         # 命名空间，默认：public
         namespace: ${nacos_namespace:}
         service: ${spring.application.name}
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        file-extension: yaml
+        # 指定配置
+        extension-configs:
+          - data-id: datasource.yaml
+            refresh: true
+          - data-id: common.yaml
+            refresh: true
 
 springdoc:
   swagger-ui:

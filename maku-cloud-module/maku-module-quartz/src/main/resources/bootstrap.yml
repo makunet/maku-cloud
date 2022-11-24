@@ -21,3 +21,5 @@ spring:
         extension-configs:
           - data-id: datasource.yaml
             refresh: true
+          - data-id: common.yaml
+            refresh: true

@@ -9,7 +9,7 @@ public interface ServerNames {
     /**
      * maku-module-system 服务名
      */
-    String SYSTEM_SERVER_NAME = "maku-module-system";
+    String SYSTEM_SERVER_NAME = "maku-cloud-system";
     /**
      * maku-module-message 服务名
      */

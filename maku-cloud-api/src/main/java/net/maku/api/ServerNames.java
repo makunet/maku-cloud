@@ -7,7 +7,7 @@ package net.maku.api;
  */
 public interface ServerNames {
     /**
-     * maku-module-system 服务名
+     * maku-cloud-system 服务名
      */
     String SYSTEM_SERVER_NAME = "maku-cloud-system";
     /**

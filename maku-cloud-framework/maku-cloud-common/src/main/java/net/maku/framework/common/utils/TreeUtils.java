@@ -16,7 +16,7 @@ public class TreeUtils {
     /**
      * 根据pid，构建树节点
      */
-    public static <T extends TreeNode> List<T> build(List<T> treeNodes, Long pid) {
+    public static <T extends TreeNode<T>> List<T> build(List<T> treeNodes, Long pid) {
         // pid不能为空
         AssertUtils.isNull(pid, "pid");
 
@@ -33,7 +33,7 @@ public class TreeUtils {
     /**
      * 查找子节点
      */
-    private static <T extends TreeNode> T findChildren(List<T> treeNodes, T rootNode) {
+    private static <T extends TreeNode<T>> T findChildren(List<T> treeNodes, T rootNode) {
         for(T treeNode : treeNodes) {
             if(rootNode.getId().equals(treeNode.getPid())) {
                 rootNode.getChildren().add(findChildren(treeNodes, treeNode));
@@ -45,7 +45,7 @@ public class TreeUtils {
     /**
      * 构建树节点
      */
-    public static <T extends TreeNode> List<T> build(List<T> treeNodes) {
+    public static <T extends TreeNode<T>> List<T> build(List<T> treeNodes) {
         List<T> result = new ArrayList<>();
 
         // list转map

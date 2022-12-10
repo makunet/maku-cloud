@@ -32,6 +32,9 @@ public class SysDictDataVO implements Serializable {
 	@NotBlank(message = "字典标签不能为空")
 	private String dictLabel;
 
+	@Schema(description = "标签样式")
+	private String labelClass;
+
 	@Schema(description = "字典值")
 	private String dictValue;
 

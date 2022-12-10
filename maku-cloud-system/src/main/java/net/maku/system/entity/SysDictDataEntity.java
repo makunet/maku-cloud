@@ -27,6 +27,10 @@ public class SysDictDataEntity extends BaseEntity {
 	 */
 	private String dictValue;
 	/**
+	 * 标签样式
+	 */
+	private String labelClass;
+	/**
 	 * 备注
 	 */
 	private String remark;

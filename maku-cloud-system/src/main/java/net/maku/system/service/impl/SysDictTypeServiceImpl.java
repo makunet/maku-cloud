@@ -100,7 +100,7 @@ public class SysDictTypeServiceImpl extends BaseServiceImpl<SysDictTypeDao, SysD
 
             for (SysDictDataEntity data : dataList) {
                 if (type.getId().equals(data.getDictTypeId())) {
-                    dict.getDataList().add(new SysDictVO.DictData(data.getDictLabel(), data.getDictValue()));
+                    dict.getDataList().add(new SysDictVO.DictData(data.getDictLabel(), data.getDictValue(), data.getLabelClass()));
                 }
             }
 

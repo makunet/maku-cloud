@@ -51,6 +51,7 @@
         <huaweicloud.obs.version>3.22.3</huaweicloud.obs.version>
         <oshi.version>6.2.2</oshi.version>
         <easyexcel.version>3.1.1</easyexcel.version>
+        <easytrans.version>2.0.12</easytrans.version>
     </properties>
 
     <dependencies>
@@ -197,6 +198,16 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>easyexcel</artifactId>
                 <version>${easyexcel.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fhs-opensource</groupId>
+                <artifactId>easy-trans-spring-boot-starter</artifactId>
+                <version>${easytrans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fhs-opensource</groupId>
+                <artifactId>easy-trans-mybatis-plus-extend</artifactId>
+                <version>${easytrans.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

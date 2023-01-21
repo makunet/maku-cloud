@@ -12,7 +12,7 @@
 	    <module>maku-module-quartz</module>
 		<module>maku-module-message</module>
 		<module>maku-module-monitor</module>
+		<module>maku-module-generator</module>
     </modules>
 
-	
 </project>

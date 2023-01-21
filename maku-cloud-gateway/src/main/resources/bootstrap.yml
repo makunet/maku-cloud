@@ -72,9 +72,27 @@ spring:
           - data-id: common.yaml
             refresh: true
 
-springdoc:
-  swagger-ui:
-    path: doc.html
+
+
+knife4j:
+  # 聚合swagger文档
+  gateway:
+    enable: true
+    routes:
+      - name: 系统服务
+        url: /sys/v3/api-docs?group=default
+        service-name: maku-cloud-system
+        order: 1
+      - name: 定时任务服务
+        url: /schedule/v3/api-docs?group=default
+        service-name: maku-module-quartz
+        order: 2
+      - name: 消息服务
+        url: /message/v3/api-docs?group=default
+        service-name: maku-module-message
+        order: 3
+
+---
 
 
 logging:

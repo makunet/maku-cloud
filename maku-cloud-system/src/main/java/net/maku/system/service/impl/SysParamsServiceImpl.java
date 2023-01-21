@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import lombok.AllArgsConstructor;
 import net.maku.framework.common.exception.ServerException;
-import net.maku.framework.common.page.PageResult;
+import net.maku.framework.common.utils.PageResult;
 import net.maku.framework.common.utils.JsonUtils;
 import net.maku.framework.mybatis.service.impl.BaseServiceImpl;
 import net.maku.system.cache.SysParamsCache;
@@ -19,7 +19,7 @@ import net.maku.system.vo.SysParamsVO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.util.List;
 
 /**

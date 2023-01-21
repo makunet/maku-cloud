@@ -35,14 +35,6 @@
 			<groupId>com.alibaba.cloud</groupId>
 			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.github.xiaoymin</groupId>
-			<artifactId>knife4j-springdoc-ui</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-		</dependency>
     </dependencies>
 
 	<build>

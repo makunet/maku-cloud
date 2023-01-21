@@ -27,12 +27,22 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>easyexcel</artifactId>
+		</dependency>
+		<dependency>
+			<artifactId>okio</artifactId>
+			<groupId>com.squareup.okio</groupId>
+			<version>3.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fhs-opensource</groupId>

@@ -3,7 +3,7 @@ package net.maku.framework.security.utils;
 import cn.hutool.core.lang.UUID;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * Token 工具类

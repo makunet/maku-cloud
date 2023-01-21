@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import net.maku.framework.common.exception.ServerException;
-import net.maku.framework.common.page.PageResult;
+import net.maku.framework.common.utils.PageResult;
 import net.maku.framework.common.utils.Result;
 import net.maku.quartz.convert.ScheduleJobConvert;
 import net.maku.quartz.entity.ScheduleJobEntity;
@@ -14,11 +14,12 @@ import net.maku.quartz.query.ScheduleJobQuery;
 import net.maku.quartz.service.ScheduleJobService;
 import net.maku.quartz.utils.CronUtils;
 import net.maku.quartz.vo.ScheduleJobVO;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.List;
 
 /**
@@ -35,7 +36,7 @@ public class ScheduleJobController {
     @GetMapping("page")
     @Operation(summary = "分页")
     @PreAuthorize("hasAuthority('schedule:page')")
-    public Result<PageResult<ScheduleJobVO>> page(@Valid ScheduleJobQuery query){
+    public Result<PageResult<ScheduleJobVO>> page(@ParameterObject @Valid ScheduleJobQuery query){
         PageResult<ScheduleJobVO> page = scheduleJobService.page(query);
 
         return Result.ok(page);

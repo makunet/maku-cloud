@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import lombok.AllArgsConstructor;
 import net.maku.framework.common.constant.Constant;
-import net.maku.framework.common.page.PageResult;
+import net.maku.framework.common.utils.PageResult;
 import net.maku.framework.mybatis.service.impl.BaseServiceImpl;
 import net.maku.message.cache.SmsPlatformCache;
 import net.maku.message.convert.SmsPlatformConvert;

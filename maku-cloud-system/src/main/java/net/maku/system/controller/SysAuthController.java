@@ -13,7 +13,7 @@ import net.maku.system.vo.SysMobileLoginVO;
 import net.maku.system.vo.SysTokenVO;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * 认证管理

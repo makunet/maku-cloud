@@ -8,7 +8,7 @@ import lombok.SneakyThrows;
 import net.maku.framework.common.constant.Constant;
 import net.maku.framework.common.excel.ExcelFinishCallBack;
 import net.maku.framework.common.exception.ServerException;
-import net.maku.framework.common.page.PageResult;
+import net.maku.framework.common.utils.PageResult;
 import net.maku.framework.common.utils.DateUtils;
 import net.maku.framework.common.utils.ExcelUtils;
 import net.maku.framework.mybatis.service.impl.BaseServiceImpl;

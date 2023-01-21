@@ -3,7 +3,7 @@ package net.maku.system.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import net.maku.framework.common.page.PageResult;
+import net.maku.framework.common.utils.PageResult;
 import net.maku.framework.common.utils.Result;
 import net.maku.framework.security.user.SecurityUser;
 import net.maku.framework.security.user.UserDetail;
@@ -16,10 +16,11 @@ import net.maku.system.vo.SysMenuVO;
 import net.maku.system.vo.SysRoleDataScopeVO;
 import net.maku.system.vo.SysRoleVO;
 import net.maku.system.vo.SysUserVO;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.List;
 
 /**
@@ -42,7 +43,7 @@ public class SysRoleController {
 	@GetMapping("page")
 	@Operation(summary = "分页")
 	@PreAuthorize("hasAuthority('sys:role:page')")
-	public Result<PageResult<SysRoleVO>> page(@Valid SysRoleQuery query){
+	public Result<PageResult<SysRoleVO>> page(@ParameterObject @Valid SysRoleQuery query){
 		PageResult<SysRoleVO> page = sysRoleService.page(query);
 
 		return Result.ok(page);

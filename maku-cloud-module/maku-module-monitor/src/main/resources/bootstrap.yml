@@ -6,9 +6,6 @@ spring:
     name: maku-module-monitor
   profiles:
     active: dev
-  boot:
-    admin:
-      context-path: /admin
   cloud:
     nacos:
       discovery:

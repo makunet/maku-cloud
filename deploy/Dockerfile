@@ -1,5 +1,5 @@
 # 构建镜像，执行命令：【docker build -t makunet:1.0 .】
-FROM openjdk:17-oracle
+FROM eclipse-temurin:17-jre
 MAINTAINER 阿沐
 
 # 设置时区

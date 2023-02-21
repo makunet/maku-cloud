@@ -20,6 +20,7 @@ import java.util.List;
  * Spring SecurityFilter 配置文件
  *
  * @author 阿沐 babamu@126.com
+ * <a href="https://maku.net">MAKU</a>
  */
 @Configuration
 @AllArgsConstructor

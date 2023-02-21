@@ -4,6 +4,7 @@ package net.maku.api;
  * 服务名称集合
  *
  * @author 阿沐 babamu@126.com
+ * <a href="https://maku.net">MAKU</a>
  */
 public interface ServerNames {
     /**

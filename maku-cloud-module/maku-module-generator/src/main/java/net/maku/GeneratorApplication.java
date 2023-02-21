@@ -8,6 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * 代码生成器模块
  *
  * @author 阿沐 babamu@126.com
+ * <a href="https://maku.net">MAKU</a>
  */
 @EnableDiscoveryClient
 @SpringBootApplication

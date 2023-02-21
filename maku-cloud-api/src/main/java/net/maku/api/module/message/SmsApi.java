@@ -12,6 +12,7 @@ import java.util.Map;
  * 短信服务API
  *
  * @author 阿沐 babamu@126.com
+ * <a href="https://maku.net">MAKU</a>
  */
 @FeignClient(name = ServerNames.MESSAGE_SERVER_NAME)
 public interface SmsApi {

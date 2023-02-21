@@ -17,6 +17,7 @@ import reactor.core.publisher.Mono;
  * Cors跨域
  *
  * @author 阿沐 babamu@126.com
+ * <a href="https://maku.net">MAKU</a>
  */
 @Configuration
 public class CorsConfig {

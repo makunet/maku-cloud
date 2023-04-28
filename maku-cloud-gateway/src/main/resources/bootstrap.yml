@@ -20,6 +20,7 @@ spring:
           predicates:
             - Path=/sys/**
           filters:
+            - RewritePath=/online/(?<path>/?.*), /sys/online/$\{path}
             - StripPrefix=1
         - id: maku-module-quartz
           uri: lb://maku-module-quartz

@@ -49,12 +49,6 @@ spring:
             - Path=/new/**
           filters:
             - StripPrefix=1
-        - id: openapi
-          uri: http://localhost:${server.port}
-          predicates:
-            - Path=/v3/api-docs/**
-          filters:
-            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
     nacos:
       discovery:
         server-addr: ${nacos_host:127.0.0.1}:${nacos_port:8848}
@@ -77,20 +71,13 @@ spring:
 knife4j:
   # 聚合swagger文档
   gateway:
-    enable: true
-    routes:
-      - name: 系统服务
-        url: /sys/v3/api-docs?group=default
-        service-name: maku-cloud-system
-        order: 1
-      - name: 定时任务服务
-        url: /schedule/v3/api-docs?group=default
-        service-name: maku-module-quartz
-        order: 2
-      - name: 消息服务
-        url: /message/v3/api-docs?group=default
-        service-name: maku-module-message
-        order: 3
+    enabled: true
+    # 指定服务发现的模式聚合微服务文档，并且是默认`default`分组
+    strategy: discover
+    discover:
+      enabled: true
+      version : openapi3
+
 
 ---
 

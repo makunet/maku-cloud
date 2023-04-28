@@ -31,11 +31,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
-        <spring.cloud.version>2022.0.1</spring.cloud.version>
-        <spring.cloud.alibaba.version>2022.0.0.0-RC1</spring.cloud.alibaba.version>
-        <mybatisplus.version>3.5.3</mybatisplus.version>
-        <knife4j.version>4.0.0</knife4j.version>
-        <hutool.version>5.8.11</hutool.version>
+        <spring.cloud.version>2022.0.2</spring.cloud.version>
+        <spring.cloud.alibaba.version>2022.0.0.0-RC2</spring.cloud.alibaba.version>
+        <mybatisplus.version>3.5.3.1</mybatisplus.version>
+        <knife4j.version>4.1.0</knife4j.version>
+        <hutool.version>5.8.18</hutool.version>
         <captcha.version>1.6.2</captcha.version>
         <mapstruct.version>1.5.3.Final</mapstruct.version>
         <hutool.version>5.8.11</hutool.version>
@@ -47,8 +47,8 @@
         <minio.version>8.5.1</minio.version>
         <qcloud.cos.version>5.6.97</qcloud.cos.version>
         <huaweicloud.obs.version>3.22.3</huaweicloud.obs.version>
-        <easyexcel.version>3.1.5</easyexcel.version>
-        <easytrans.version>2.1.6</easytrans.version>
+        <easyexcel.version>3.2.1</easyexcel.version>
+        <easytrans.version>2.1.15</easytrans.version>
     </properties>
 
     <dependencies>

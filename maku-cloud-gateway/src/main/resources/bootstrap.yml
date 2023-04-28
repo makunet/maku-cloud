@@ -50,6 +50,11 @@ spring:
             - Path=/new/**
           filters:
             - StripPrefix=1
+        - id: maku-module-generator
+          uri: lb://maku-module-generator
+          order: 1000
+          predicates:
+            - Path=/maku-generator/**
     nacos:
       discovery:
         server-addr: ${nacos_host:127.0.0.1}:${nacos_port:8848}

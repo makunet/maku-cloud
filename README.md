@@ -1,5 +1,6 @@
 ## 项目说明
 - maku-cloud 是采用SpringCloud Alibaba 2022、SpringCloud 2022、SpringBoot 3.0、SpringSecurity 6.0、Nacos、Mybatis-Plus、Redis等框架，开发的一套SpringCloud低代码开发平台，使用门槛极低，且采用MIT开源协议，完全免费开源，可免费用于**商业项目**等场景。
+- 支持Online在线表单开发，可快速开发业务，无需部署及重启服务等优点。
 - 前端工程：https://gitee.com/makunet/maku-admin
 - 开发文档：https://maku.net/docs/maku-cloud
 - 演示环境：https://demo.maku.net/maku-cloud

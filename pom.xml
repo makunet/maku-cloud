@@ -189,6 +189,45 @@
         </dependencies>
     </dependencyManagement>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- 开发环境 -->
+                <profile.name>dev</profile.name>
+                <nacos.username>nacos</nacos.username>
+                <nacos.password>nacos</nacos.password>
+                <nacos.server-addr>127.0.0.1:8848</nacos.server-addr>
+                <nacos.namespace></nacos.namespace>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <!-- 测试环境 -->
+                <profile.name>test</profile.name>
+                <nacos.username>nacos</nacos.username>
+                <nacos.password>nacos</nacos.password>
+                <nacos.server-addr>127.0.0.1:8848</nacos.server-addr>
+                <nacos.namespace></nacos.namespace>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <!-- 生产环境 -->
+                <profile.name>prod</profile.name>
+                <nacos.username>nacos</nacos.username>
+                <nacos.password>nacos</nacos.password>
+                <nacos.server-addr>127.0.0.1:8848</nacos.server-addr>
+                <nacos.namespace></nacos.namespace>
+            </properties>
+        </profile>
+    </profiles>
+
     <repositories>
         <repository>
             <id>public</id>

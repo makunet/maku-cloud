@@ -2,6 +2,7 @@ package net.maku.system.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import net.maku.framework.common.utils.PageResult;
 import net.maku.framework.common.utils.Result;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.validation.Valid;
-
 /**
  * 登录日志
  *
@@ -23,7 +22,7 @@ import jakarta.validation.Valid;
  * <a href="https://maku.net">MAKU</a>
  */
 @RestController
-@RequestMapping("log/login")
+@RequestMapping("sys/log/login")
 @Tag(name = "登录日志")
 @AllArgsConstructor
 public class SysLogLoginController {
@@ -44,5 +43,5 @@ public class SysLogLoginController {
     public void export() {
         sysLogLoginService.export();
     }
-    
+
 }

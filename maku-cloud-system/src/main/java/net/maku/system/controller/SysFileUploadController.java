@@ -19,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
  * <a href="https://maku.net">MAKU</a>
  */
 @RestController
-@RequestMapping("file")
+@RequestMapping("sys/file")
 @Tag(name = "文件上传")
 @AllArgsConstructor
 public class SysFileUploadController {

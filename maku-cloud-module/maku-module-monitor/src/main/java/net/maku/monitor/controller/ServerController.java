@@ -16,7 +16,7 @@ import java.util.List;
  * @author Pure tea
  */
 @RestController
-@RequestMapping("server")
+@RequestMapping("monitor/server")
 public class ServerController {
 
     /**

@@ -5,35 +5,10 @@ services:
     container_name: maku-cloud-gateway
     ports:
       - 8080:8080
-    env_file:
-      - app.env
     volumes:
       - /work/www/maku-cloud/maku-cloud-gateway.jar:/app/app.jar
   maku-cloud-system:
     image: makunet:1.0
     container_name: maku-cloud-system
-    env_file:
-      - app.env
     volumes:
       - /work/www/maku-cloud/maku-cloud-system.jar:/app/app.jar
-  maku-module-quartz:
-    image: makunet:1.0
-    container_name: maku-module-quartz
-    env_file:
-      - app.env
-    volumes:
-      - /work/www/maku-cloud/maku-module-quartz.jar:/app/app.jar
-  maku-module-message:
-    image: makunet:1.0
-    container_name: maku-module-message
-    env_file:
-      - app.env
-    volumes:
-      - /work/www/maku-cloud/maku-module-message.jar:/app/app.jar
-  maku-module-monitor:
-    image: makunet:1.0
-    container_name: maku-module-monitor
-    env_file:
-      - app.env
-    volumes:
-      - /work/www/maku-cloud/maku-module-monitor.jar:/app/app.jar

@@ -1,3 +1,0 @@
-auth:
-  ignore_urls:
-    - /api/message/sms/**

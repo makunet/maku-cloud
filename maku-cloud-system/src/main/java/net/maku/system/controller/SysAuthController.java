@@ -2,6 +2,7 @@ package net.maku.system.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import net.maku.framework.common.utils.Result;
 import net.maku.framework.security.utils.TokenUtils;
@@ -13,8 +14,6 @@ import net.maku.system.vo.SysMobileLoginVO;
 import net.maku.system.vo.SysTokenVO;
 import org.springframework.web.bind.annotation.*;
 
-import jakarta.servlet.http.HttpServletRequest;
-
 /**
  * 认证管理
  *
@@ -22,7 +21,7 @@ import jakarta.servlet.http.HttpServletRequest;
  * <a href="https://maku.net">MAKU</a>
  */
 @RestController
-@RequestMapping("auth")
+@RequestMapping("sys/auth")
 @Tag(name = "认证管理")
 @AllArgsConstructor
 public class SysAuthController {
@@ -48,7 +47,10 @@ public class SysAuthController {
     @PostMapping("send/code")
     @Operation(summary = "发送短信验证码")
     public Result<String> sendCode(String mobile) {
-        sysAuthService.sendCode(mobile);
+        boolean flag = sysAuthService.sendCode(mobile);
+        if (!flag) {
+            return Result.error("短信发送失败！");
+        }
 
         return Result.ok();
     }

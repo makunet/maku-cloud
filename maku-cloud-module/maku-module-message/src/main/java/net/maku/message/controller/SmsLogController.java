@@ -2,6 +2,7 @@ package net.maku.message.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import net.maku.framework.common.utils.PageResult;
 import net.maku.framework.common.utils.Result;
@@ -17,16 +18,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.validation.Valid;
-
 /**
-* 短信日志
-*
-* @author 阿沐 babamu@126.com
-*/
+ * 短信日志
+ *
+ * @author 阿沐 babamu@126.com
+ * <a href="https://maku.net">MAKU</a>
+ */
 @RestController
-@RequestMapping("sms/log")
-@Tag(name="短信日志")
+@RequestMapping("message/sms/log")
+@Tag(name = "短信日志")
 @AllArgsConstructor
 public class SmsLogController {
     private final SmsLogService smsLogService;
@@ -34,7 +34,7 @@ public class SmsLogController {
     @GetMapping("page")
     @Operation(summary = "分页")
     @PreAuthorize("hasAuthority('sms:log')")
-    public Result<PageResult<SmsLogVO>> page(@ParameterObject @Valid SmsLogQuery query){
+    public Result<PageResult<SmsLogVO>> page(@ParameterObject @Valid SmsLogQuery query) {
         PageResult<SmsLogVO> page = smsLogService.page(query);
 
         return Result.ok(page);
@@ -43,7 +43,7 @@ public class SmsLogController {
     @GetMapping("{id}")
     @Operation(summary = "信息")
     @PreAuthorize("hasAuthority('sms:log')")
-    public Result<SmsLogVO> get(@PathVariable("id") Long id){
+    public Result<SmsLogVO> get(@PathVariable("id") Long id) {
         SmsLogEntity entity = smsLogService.getById(id);
 
         return Result.ok(SmsLogConvert.INSTANCE.convert(entity));

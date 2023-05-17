@@ -16,7 +16,7 @@
 		</dependency>
 		<dependency>
 			<groupId>net.maku</groupId>
-			<artifactId>maku-cloud-mybatis</artifactId>
+			<artifactId>maku-cloud-framework</artifactId>
 			<version>${revision}</version>
 		</dependency>
 		<dependency>

@@ -14,45 +14,16 @@ spring:
       routes:
         - id: maku-cloud-system
           uri: lb://maku-cloud-system
-          order: 1
+          order: 999999
           predicates:
-            - Path=/sys/**
-          filters:
-            - RewritePath=/online/(?<path>/?.*), /sys/online/$\{path}
-            - StripPrefix=1
-        - id: maku-module-quartz
-          uri: lb://maku-module-quartz
-          order: 2
-          predicates:
-            - Path=/schedule/**
-          filters:
-            - StripPrefix=1
-        - id: maku-module-message
-          uri: lb://maku-module-message
-          order: 3
-          predicates:
-            - Path=/message/**
-          filters:
-            - StripPrefix=1
-        - id: maku-module-monitor
-          uri: lb://maku-module-monitor
-          order: 4
-          predicates:
-            - Path=/monitor/**
-          filters:
-            - StripPrefix=1
+            - Path=/**
         - id: maku-cloud-new
           uri: lb://maku-cloud-new
-          order: 999
+          order: 1
           predicates:
             - Path=/new/**
           filters:
             - StripPrefix=1
-        - id: maku-module-generator
-          uri: lb://maku-module-generator
-          order: 1000
-          predicates:
-            - Path=/maku-generator/**
     nacos:
       username: @nacos.username@
       password: @nacos.password@

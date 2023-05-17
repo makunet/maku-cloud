@@ -24,18 +24,18 @@ public class ScheduleJobEntity implements Serializable {
 	private Long id;
 
 	/**
-	 * 任务名称
-	 */
+	* 任务名称
+	*/
 	private String jobName;
 
 	/**
-	 * 任务组名
-	 */
+	* 任务组名
+	*/
 	private String jobGroup;
 
 	/**
-	 * bean名称
-	 */
+	* bean名称
+	*/
 	private String beanName;
 
 	/**
@@ -44,28 +44,28 @@ public class ScheduleJobEntity implements Serializable {
 	private String method;
 
 	/**
-	 * 方法参数
-	 */
+	* 方法参数
+	*/
 	private String params;
 
 	/**
-	 * cron表达式
-	 */
+	* cron表达式
+	*/
 	private String cronExpression;
 
 	/**
-	 * 状态
-	 */
+	* 状态 
+	*/
 	private Integer status;
 
 	/**
-	 * 是否并发  0：禁止  1：允许
-	 */
+	* 是否并发  0：禁止  1：允许
+	*/
 	private Integer concurrent;
 
 	/**
-	 * 备注
-	 */
+	* 备注
+	*/
 	private String remark;
 
 	/**

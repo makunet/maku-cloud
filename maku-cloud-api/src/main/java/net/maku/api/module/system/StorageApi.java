@@ -1,38 +1,53 @@
 package net.maku.api.module.system;
 
-import feign.codec.Encoder;
-import feign.form.spring.SpringFormEncoder;
-import net.maku.api.ServerNames;
-import net.maku.api.module.system.dto.StorageDTO;
-import net.maku.framework.common.utils.Result;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
+import java.io.InputStream;
 
 /**
- * 文件上传
+ * 存储服务API
  *
- *  @author 阿沐 babamu@126.com
+ * @author 阿沐 babamu@126.com
+ * <a href="https://maku.net">MAKU</a>
  */
-@FeignClient(name = ServerNames.SYSTEM_SERVER_NAME)
 public interface StorageApi {
 
     /**
-     * 文件上传
+     * 根据文件名，生成带时间戳的新文件名
+     *
+     * @param fileName 文件名
+     * @return 返回带时间戳的文件名
      */
-    @PostMapping(value = "api/storage/upload", produces = {MediaType.APPLICATION_JSON_VALUE},
-            consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    Result<StorageDTO> upload(@RequestPart("file") MultipartFile file) throws IOException;
+    String getNewFileName(String fileName);
 
-    class MultipartSupportConfig {
-        @Bean
-        public Encoder feignFormEncoder() {
-            return new SpringFormEncoder();
-        }
-    }
+    /**
+     * 生成路径，不包含文件名
+     *
+     * @return 返回生成的路径
+     */
+    String getPath();
+
+    /**
+     * 根据文件名，生成路径
+     *
+     * @param fileName 文件名
+     * @return 生成文件路径
+     */
+    String getPath(String fileName);
+
+    /**
+     * 文件上传
+     *
+     * @param data 文件字节数组
+     * @param path 文件路径，包含文件名
+     * @return 返回http地址
+     */
+    String upload(byte[] data, String path);
+
+    /**
+     * 文件上传
+     *
+     * @param inputStream 字节流
+     * @param path        文件路径，包含文件名
+     * @return 返回http地址
+     */
+    String upload(InputStream inputStream, String path);
 }

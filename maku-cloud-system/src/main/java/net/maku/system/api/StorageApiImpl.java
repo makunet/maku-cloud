@@ -2,41 +2,44 @@ package net.maku.system.api;
 
 import lombok.AllArgsConstructor;
 import net.maku.api.module.system.StorageApi;
-import net.maku.api.module.system.dto.StorageDTO;
-import net.maku.framework.common.utils.Result;
 import net.maku.storage.service.StorageService;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.stereotype.Component;
 
-import java.io.IOException;
+import java.io.InputStream;
 
 /**
- * 文件上传
+ * 存储服务Api
  *
- *  @author 阿沐 babamu@126.com
+ * @author 阿沐 babamu@126.com
+ * <a href="https://maku.net">MAKU</a>
  */
-@RestController
+@Component
 @AllArgsConstructor
 public class StorageApiImpl implements StorageApi {
     private final StorageService storageService;
+    
+    @Override
+    public String getNewFileName(String fileName) {
+        return storageService.getNewFileName(fileName);
+    }
 
     @Override
-    public Result<StorageDTO> upload(MultipartFile file) throws IOException {
-        // 是否为空
-        if (file.isEmpty()) {
-            return Result.error("文件不能为空");
-        }
+    public String getPath() {
+        return storageService.getPath();
+    }
 
-        // 上传路径
-        String path = storageService.getPath(file.getOriginalFilename());
-        // 上传文件
-        String url = storageService.upload(file.getBytes(), path);
+    @Override
+    public String getPath(String fileName) {
+        return storageService.getPath(fileName);
+    }
 
-        // 上传信息
-        StorageDTO storage = new StorageDTO();
-        storage.setUrl(url);
-        storage.setSize(file.getSize());
+    @Override
+    public String upload(byte[] data, String path) {
+        return storageService.upload(data, path);
+    }
 
-        return Result.ok(storage);
+    @Override
+    public String upload(InputStream inputStream, String path) {
+        return storageService.upload(inputStream, path);
     }
 }

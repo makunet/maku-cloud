@@ -14,6 +14,12 @@ import net.maku.system.vo.SysLogLoginVO;
  */
 public interface SysLogLoginService extends BaseService<SysLogLoginEntity> {
 
+    /**
+     * Page result.
+     *
+     * @param query the query
+     * @return the page result
+     */
     PageResult<SysLogLoginVO> page(SysLogLoginQuery query);
 
     /**

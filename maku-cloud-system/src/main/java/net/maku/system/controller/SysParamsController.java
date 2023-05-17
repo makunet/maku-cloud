@@ -2,6 +2,7 @@ package net.maku.system.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import net.maku.framework.common.utils.PageResult;
 import net.maku.framework.common.utils.Result;
@@ -14,7 +15,6 @@ import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import jakarta.validation.Valid;
 import java.util.List;
 
 /**
@@ -24,7 +24,7 @@ import java.util.List;
  * <a href="https://maku.net">MAKU</a>
  */
 @RestController
-@RequestMapping("params")
+@RequestMapping("sys/params")
 @Tag(name = "参数管理")
 @AllArgsConstructor
 public class SysParamsController {

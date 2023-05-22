@@ -19,26 +19,26 @@
 			<artifactId>maku-cloud-framework</artifactId>
 			<version>${revision}</version>
 		</dependency>
-		<dependency>
-			<groupId>net.maku</groupId>
-			<artifactId>maku-module-generator</artifactId>
-			<version>${revision}</version>
-		</dependency>
-		<dependency>
-			<groupId>net.maku</groupId>
-			<artifactId>maku-module-message</artifactId>
-			<version>${revision}</version>
-		</dependency>
-		<dependency>
-			<groupId>net.maku</groupId>
-			<artifactId>maku-module-monitor</artifactId>
-			<version>${revision}</version>
-		</dependency>
-		<dependency>
-			<groupId>net.maku</groupId>
-			<artifactId>maku-module-quartz</artifactId>
-			<version>${revision}</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>net.maku</groupId>-->
+<!--			<artifactId>maku-module-generator</artifactId>-->
+<!--			<version>${revision}</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>net.maku</groupId>-->
+<!--			<artifactId>maku-module-message</artifactId>-->
+<!--			<version>${revision}</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>net.maku</groupId>-->
+<!--			<artifactId>maku-module-monitor</artifactId>-->
+<!--			<version>${revision}</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>net.maku</groupId>-->
+<!--			<artifactId>maku-module-quartz</artifactId>-->
+<!--			<version>${revision}</version>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>net.maku</groupId>
 			<artifactId>maku-module-online</artifactId>

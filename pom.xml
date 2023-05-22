@@ -211,7 +211,7 @@
                 <profile.name>test</profile.name>
                 <nacos.username>nacos</nacos.username>
                 <nacos.password>nacos</nacos.password>
-                <nacos.server-addr>127.0.0.1:8848</nacos.server-addr>
+                <nacos.server-addr>172.17.0.1:8848</nacos.server-addr>
                 <nacos.namespace></nacos.namespace>
             </properties>
         </profile>
@@ -222,7 +222,7 @@
                 <profile.name>prod</profile.name>
                 <nacos.username>nacos</nacos.username>
                 <nacos.password>nacos</nacos.password>
-                <nacos.server-addr>127.0.0.1:8848</nacos.server-addr>
+                <nacos.server-addr>172.17.0.1:8848</nacos.server-addr>
                 <nacos.namespace></nacos.namespace>
             </properties>
         </profile>

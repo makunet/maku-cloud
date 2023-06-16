@@ -4,7 +4,6 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import net.maku.framework.common.exception.ServerException;
 import net.maku.framework.common.utils.JsonUtils;
@@ -32,15 +31,6 @@ import java.util.List;
 @AllArgsConstructor
 public class SysParamsServiceImpl extends BaseServiceImpl<SysParamsDao, SysParamsEntity> implements SysParamsService {
     private final SysParamsCache sysParamsCache;
-
-    @PostConstruct
-    public void init() {
-        // 查询列表
-        List<SysParamsEntity> list = baseMapper.selectList(null);
-
-        // 保存到缓存
-        sysParamsCache.saveList(list);
-    }
 
     @Override
     public PageResult<SysParamsVO> page(SysParamsQuery query) {
@@ -116,11 +106,20 @@ public class SysParamsServiceImpl extends BaseServiceImpl<SysParamsDao, SysParam
     @Override
     public String getString(String paramKey) {
         String value = sysParamsCache.get(paramKey);
-        if (StrUtil.isBlank(value)) {
-            throw new ServerException("参数不能为空，paramKey：" + paramKey);
+        if (StrUtil.isNotBlank(value)) {
+            return value;
         }
 
-        return value;
+        // 如果缓存没有，则查询数据库
+        SysParamsEntity entity = baseMapper.get(paramKey);
+        if (entity == null) {
+            throw new ServerException("参数值不存在，paramKey：" + paramKey);
+        }
+
+        // 保存到缓存
+        sysParamsCache.save(entity.getParamKey(), entity.getParamValue());
+
+        return entity.getParamValue();
     }
 
     @Override

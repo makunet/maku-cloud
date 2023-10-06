@@ -57,7 +57,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.baomidou</groupId>
-			<artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+			<artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.mysql</groupId>
@@ -70,6 +70,10 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>

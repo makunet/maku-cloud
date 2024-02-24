@@ -4,12 +4,19 @@
 <mapper namespace="net.maku.system.dao.SysUserDao">
 
 	<select id="getList" resultType="net.maku.system.entity.SysUserEntity">
-		select t1.* from sys_user t1 where t1.super_admin = 0 and t1.deleted = 0
+		select t1.*
+			from sys_user t1 where t1.super_admin = 0 and t1.deleted = 0
 		<if test="username != null and username.trim() != ''">
 			and t1.username = #{username}
 		</if>
 		<if test="mobile != null and mobile.trim() != ''">
 			and t1.mobile = #{mobile}
+		</if>
+		<if test="orgList != null">
+			and t1.org_id in
+			<foreach collection="orgList" item="orgId" open="(" separator="," close=")">
+				#{orgId}
+			</foreach>
 		</if>
 		<if test="gender != null">
 			and t1.gender = #{gender}
@@ -23,7 +30,7 @@
 
 	<select id="getRoleUserList" resultType="net.maku.system.entity.SysUserEntity">
 		select t1.* from sys_user t1 left join sys_user_role t2 on t1.id = t2.user_id
-		where t1.deleted = 0 and t2.deleted = 0 and t2.role_id = #{roleId}
+			where t1.deleted = 0 and t2.deleted = 0 and t2.role_id = #{roleId}
 		<if test="username != null and username.trim() != ''">
 			and t1.username = #{username}
 		</if>

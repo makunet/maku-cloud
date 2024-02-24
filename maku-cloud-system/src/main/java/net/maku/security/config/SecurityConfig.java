@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import net.maku.framework.security.mobile.MobileAuthenticationProvider;
 import net.maku.framework.security.mobile.MobileUserDetailsService;
 import net.maku.framework.security.mobile.MobileVerifyCodeService;
+import net.maku.framework.security.third.ThirdAuthenticationProvider;
+import net.maku.framework.security.third.ThirdOpenIdService;
+import net.maku.framework.security.third.ThirdUserDetailsService;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,6 +33,8 @@ public class SecurityConfig {
     private final UserDetailsService userDetailsService;
     private final MobileUserDetailsService mobileUserDetailsService;
     private final MobileVerifyCodeService mobileVerifyCodeService;
+    private final ThirdUserDetailsService thirdUserDetailsService;
+    private final ThirdOpenIdService thirdOpenIdService;
     private final PasswordEncoder passwordEncoder;
     private final ApplicationEventPublisher applicationEventPublisher;
 
@@ -48,10 +53,16 @@ public class SecurityConfig {
     }
 
     @Bean
+    ThirdAuthenticationProvider thirdAuthenticationProvider() {
+        return new ThirdAuthenticationProvider(thirdUserDetailsService, thirdOpenIdService);
+    }
+
+    @Bean
     public AuthenticationManager authenticationManager() {
         List<AuthenticationProvider> providerList = new ArrayList<>();
         providerList.add(daoAuthenticationProvider());
         providerList.add(mobileAuthenticationProvider());
+        providerList.add(thirdAuthenticationProvider());
 
         ProviderManager providerManager = new ProviderManager(providerList);
         providerManager.setAuthenticationEventPublisher(new DefaultAuthenticationEventPublisher(applicationEventPublisher));

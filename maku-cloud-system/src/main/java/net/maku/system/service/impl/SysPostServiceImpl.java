@@ -47,7 +47,16 @@ public class SysPostServiceImpl extends BaseServiceImpl<SysPostDao, SysPostEntit
         return SysPostConvert.INSTANCE.convertList(entityList);
     }
 
-    private Wrapper<SysPostEntity> getWrapper(SysPostQuery query){
+    @Override
+    public List<String> getNameList(List<Long> idList) {
+        if (idList.isEmpty()) {
+            return null;
+        }
+
+        return baseMapper.selectBatchIds(idList).stream().map(SysPostEntity::getPostName).toList();
+    }
+
+    private Wrapper<SysPostEntity> getWrapper(SysPostQuery query) {
         LambdaQueryWrapper<SysPostEntity> wrapper = new LambdaQueryWrapper<>();
         wrapper.like(StrUtil.isNotBlank(query.getPostCode()), SysPostEntity::getPostCode, query.getPostCode());
         wrapper.like(StrUtil.isNotBlank(query.getPostName()), SysPostEntity::getPostName, query.getPostName());

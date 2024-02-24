@@ -56,7 +56,7 @@ public class SysLogLoginServiceImpl extends BaseServiceImpl<SysLogLoginDao, SysL
         assert request != null;
         String userAgent = request.getHeader(HttpHeaders.USER_AGENT);
         String ip = IpUtils.getIpAddr(request);
-        String address = AddressUtils.getAddressByIP(ip);
+        String address = IpUtils.getAddressByIP(ip);
 
         SysLogLoginEntity entity = new SysLogLoginEntity();
         entity.setUsername(username);

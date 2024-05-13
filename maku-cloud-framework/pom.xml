@@ -80,6 +80,10 @@
 			<artifactId>transmittable-thread-local</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>lock4j-redisson-spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.lionsoul</groupId>
 			<artifactId>ip2region</artifactId>
 		</dependency>

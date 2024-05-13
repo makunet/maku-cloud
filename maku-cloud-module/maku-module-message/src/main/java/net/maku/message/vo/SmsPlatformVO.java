@@ -6,7 +6,7 @@ import lombok.Data;
 import net.maku.framework.common.utils.DateUtils;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 短信平台
@@ -22,8 +22,8 @@ public class SmsPlatformVO implements Serializable {
     @Schema(description = "id")
     private Long id;
 
-	@Schema(description = "平台类型  0：阿里云   1：腾讯云   2：七牛云   3：华为云")
-	private Integer platform;
+    @Schema(description = "平台类型  0：阿里云   1：腾讯云")
+    private Integer platform;
 
     @Schema(description = "短信签名")
     private String signName;
@@ -51,6 +51,6 @@ public class SmsPlatformVO implements Serializable {
 
     @Schema(description = "创建时间")
     @JsonFormat(pattern = DateUtils.DATE_TIME_PATTERN)
-    private Date createTime;
+    private LocalDateTime createTime;
 
 }

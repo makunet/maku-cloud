@@ -6,10 +6,10 @@ import com.fhs.core.trans.anno.Trans;
 import com.fhs.core.trans.constant.TransType;
 import com.fhs.core.trans.vo.TransPojo;
 import lombok.Data;
-import net.maku.framework.common.excel.DateConverter;
+import net.maku.framework.common.excel.LocalDateTimeConverter;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * excel用户表
@@ -63,7 +63,7 @@ public class SysUserExcelVO implements Serializable, TransPojo {
     @ExcelProperty(value = "超级管理员")
     private String superAdminLabel;
 
-    @ExcelProperty(value = "创建时间", converter = DateConverter.class)
-    private Date createTime;
+    @ExcelProperty(value = "创建时间", converter = LocalDateTimeConverter.class)
+    private LocalDateTime createTime;
 
 }

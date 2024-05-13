@@ -8,11 +8,11 @@ import com.fhs.core.trans.constant.TransType;
 import com.fhs.core.trans.vo.TransPojo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import net.maku.framework.common.excel.DateConverter;
+import net.maku.framework.common.excel.LocalDateTimeConverter;
 import net.maku.framework.common.utils.DateUtils;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 登录日志
@@ -61,9 +61,9 @@ public class SysLogLoginVO implements Serializable, TransPojo {
     @ExcelProperty(value = "操作信息")
     private String operationLabel;
 
-    @ExcelProperty(value = "创建时间", converter = DateConverter.class)
+    @ExcelProperty(value = "创建时间", converter = LocalDateTimeConverter.class)
     @Schema(description = "创建时间")
     @JsonFormat(pattern = DateUtils.DATE_TIME_PATTERN)
-    private Date createTime;
+    private LocalDateTime createTime;
 
 }

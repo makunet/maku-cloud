@@ -1,10 +1,12 @@
 package net.maku.framework.common.utils;
 
 import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.core.util.URLUtil;
 import cn.hutool.extra.spring.SpringUtil;
 import com.alibaba.excel.EasyExcel;
+import com.alibaba.excel.converters.longconverter.LongStringConverter;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.fhs.common.utils.ConverterUtils;
 import com.fhs.core.trans.anno.Trans;
@@ -24,6 +26,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -120,7 +123,7 @@ public class ExcelUtils {
      */
     public static <T> void excelExport(Class<T> head, File file, String sheetName, List<T> data) {
         try {
-            EasyExcel.write(file, head).sheet(sheetName).doWrite(data);
+            EasyExcel.write(file, head).sheet(sheetName).registerConverter(new LongStringConverter()).doWrite(data);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -139,7 +142,8 @@ public class ExcelUtils {
         try {
             HttpServletResponse response = getExportResponse(excelName);
 
-            EasyExcel.write(response.getOutputStream(), head).sheet(StringUtils.isBlank(sheetName) ? "sheet1" : sheetName).doWrite(data);
+            EasyExcel.write(response.getOutputStream(), head).sheet(StringUtils.isBlank(sheetName) ? "sheet1" : sheetName)
+                    .registerConverter(new LongStringConverter()).doWrite(data);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -158,7 +162,8 @@ public class ExcelUtils {
         try {
             HttpServletResponse response = getExportResponse(excelName);
 
-            EasyExcel.write(response.getOutputStream()).head(head).sheet(StringUtils.isBlank(sheetName) ? "sheet1" : sheetName).doWrite(data);
+            EasyExcel.write(response.getOutputStream()).head(head).sheet(StringUtils.isBlank(sheetName) ? "sheet1" : sheetName)
+                    .registerConverter(new LongStringConverter()).doWrite(data);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -169,6 +174,8 @@ public class ExcelUtils {
         response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
         response.setHeader("Access-Control-Expose-Headers", "Content-Disposition");
         response.setCharacterEncoding("UTF-8");
+        
+        excelName += DateUtil.format(new Date(), "yyyyMMddHHmmss");
         String fileName = URLUtil.encode(excelName, StandardCharsets.UTF_8);
         response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
 

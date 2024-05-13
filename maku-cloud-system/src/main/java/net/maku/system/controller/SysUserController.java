@@ -18,6 +18,7 @@ import net.maku.system.service.SysPostService;
 import net.maku.system.service.SysUserPostService;
 import net.maku.system.service.SysUserRoleService;
 import net.maku.system.service.SysUserService;
+import net.maku.system.vo.SysUserAvatarVO;
 import net.maku.system.vo.SysUserBaseVO;
 import net.maku.system.vo.SysUserPasswordVO;
 import net.maku.system.vo.SysUserVO;
@@ -100,6 +101,15 @@ public class SysUserController {
         return Result.ok();
     }
 
+    @PutMapping("avatar")
+    @Operation(summary = "修改登录用户头像")
+    @OperateLog(type = OperateTypeEnum.UPDATE)
+    public Result<String> avatar(@RequestBody SysUserAvatarVO avatar) {
+        sysUserService.updateAvatar(avatar);
+
+        return Result.ok();
+    }
+
     @PutMapping("password")
     @Operation(summary = "修改密码")
     @OperateLog(type = OperateTypeEnum.UPDATE)
@@ -165,6 +175,14 @@ public class SysUserController {
         sysUserService.delete(idList);
 
         return Result.ok();
+    }
+
+    @PostMapping("nameList")
+    @Operation(summary = "用户姓名列表")
+    public Result<List<String>> nameList(@RequestBody List<Long> idList) {
+        List<String> list = sysUserService.getRealNameList(idList);
+
+        return Result.ok(list);
     }
 
     @PostMapping("import")

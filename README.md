@@ -6,8 +6,8 @@
 - 支持多种数据库，包括MySQL、PostgreSQL、达梦等，可灵活切换。
 - 支持多种登录方式，包括账号密码、短信验证码、企业微信、钉钉、飞书、微信等，可灵活选择。
 - 支持多租户模式，可实现不同业务系统之间的隔离，能同时支持字段隔离、数据源隔离方式，满足对多租户的全部需求。
-
-- 前端工程：https://gitee.com/makunet/maku-admin
+地方
+- 开源汇总：https://maku.net/project/
 - 开发文档：https://maku.net/docs/maku-cloud
 - 演示环境：https://demo.maku.net/maku-cloud
 - 授权地址：https://maku.net/p/10096

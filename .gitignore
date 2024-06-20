@@ -10,7 +10,7 @@ logs/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
+README.md
 # Package Files #
 .idea
 *.iml

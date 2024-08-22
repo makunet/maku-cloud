@@ -2,7 +2,7 @@
   "project": {
     "packageName": "net.maku",
     "version": "1.0.0",
-    "backendPath": "D:\\generator\\maku-boot\\maku-server",
+    "backendPath": "D:\\generator\\maku-cloud\\maku-cloud-new",
     "frontendPath": "D:\\generator\\maku-admin",
     "tablePrefix": "tb_",
     "moduleName": "business",

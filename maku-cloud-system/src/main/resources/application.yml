@@ -18,7 +18,12 @@ spring:
     import:
       - optional:nacos:datasource.yaml
       - optional:nacos:common.yaml
-
+  mqtt:
+    host: tcp://localhost:1883
+    username: maku
+    password: maku
+    clientId: maku_boot_service_dev
+    default-topic: topic_default
 
 storage:
   enabled: true
